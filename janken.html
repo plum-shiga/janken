@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<title>janken.html</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<p>せーの、じゃんけん……</p>
+	<p>
+    <input id="goo" type="button" value="グー" onClick="getId('goo')">
+	</p>
+	<p>
+	<input id="choki" type="button" value="チョキ" onClick="getId('choki')">
+	</p>
+	<p>
+	<input id="pa" type="button" value="パー" onClick="getId('pa')">
+	</p>
+	<p>ここに相手の手を表示する</p>
+	<p>ここに勝敗結果を表示する</p>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		// 主語を述語するとがんばる
+		/*
+		$('主語').述語(function(){
+			// がんばる
+		}
+		*/
+
+    /*
+     *
+     *  2019/05/05 22:05 plum ===
+     *
+     *  コードは全部ここに書けばOK
+     *  (他の場所で <script> を定義しなくて大丈夫
+     *
+     *  << jquery 要素 id 取得 >> でぐぐろう！
+     *  要素とは、htmlの <input> とかのこと。
+     *  << html 要素 とは >> でぐぐろう。
+     *
+     *  id は各要素を特定するためのid。
+     *  なので、 <input id="goo"> だけじゃなくて、
+     *  <input id="choki"... > とかそれぞれにidを振ってあげる必要がある。
+     *  << html id とは>> でぐぐろう。
+     *
+     */
+    function getId(val){
+    	alert(val);
+    	/*
+		$('#goo').click(function(){
+				$.ajax({
+					var url = "./here.php?player=" + $(this).val()
+					type: "GET",
+					url: url,
+				})
+				.done((data) => {
+					alert(data);
+				})
+				.fail((failData) => {
+					alert(failData);
+				})
+		});
+		*/
+	});
+	//*/
+
+		// jquery ajax
+		/*
+		$.ajax({
+			type: "GET",
+			url: "./here.php?janken"
+		})
+		.done((data) => {
+			alert(data);
+		})
+		.fail((failData)=> {
+			alert(failData);
+		});
+		*/
+		
+	</script>
+</body>
+</html>

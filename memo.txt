@@ -1,0 +1,16 @@
+memo
+===
+
+## 手順
+* あぱちぇ押す→あどみん押す→http://localhost:3000くろーむ
+
+## URLとフォルダの関係
+* http://localhost:3000
+	* = C:\xampp\htdocs
+* http://localhost:3000/hazama/
+	* = C:\xampp\htdocs\hazama のフォルダ
+	* URL末尾に何もないので
+		* = C:\xampp\htdocs\hazama\index.html
+
+
+
