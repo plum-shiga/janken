@@ -7,13 +7,13 @@
 <body>
 	<p>せーの、じゃんけん……</p>
 	<p>
-    <input id="goo" type="button" value="グー" onClick="getId('goo')">
+    <input id="goo" type="button" value="グー" onClick="getId('グー')">
 	</p>
 	<p>
-	<input id="choki" type="button" value="チョキ" onClick="getId('choki')">
+	<input id="choki" type="button" value="チョキ" onClick="getId('チョキ')">
 	</p>
 	<p>
-	<input id="pa" type="button" value="パー" onClick="getId('pa')">
+	<input id="pa" type="button" value="パー" onClick="getId('パー')">
 	</p>
 	<p>ここに相手の手を表示する</p>
 	<p>ここに勝敗結果を表示する</p>
@@ -44,23 +44,19 @@
      *
      */
     function getId(val){
-    	alert(val);
-    	/*
-		$('#goo').click(function(){
-				$.ajax({
-					var url = "./here.php?player=" + $(this).val()
-					type: "GET",
-					url: url,
-				})
-				.done((data) => {
-					alert(data);
-				})
-				.fail((failData) => {
-					alert(failData);
-				})
+   // var test = "./janken.php?player=" + val
+	   // alert(test);
+		$.ajax({
+			url: "./janken.php?player=" + val,
+			type: "GET"
+		})
+		.done((data) => {
+			alert(data);
+		})
+		.fail((failData) => {
+			alert(failData);
 		});
-		*/
-	});
+	}
 	//*/
 
 		// jquery ajax
