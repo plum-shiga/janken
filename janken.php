@@ -1,10 +1,18 @@
 <?php
+	$janken_array = [
+		'cpu'=>'choki',
+		'result'=>'win'
+	];
 
- if ($_GET["player"] == "グー") {
- 	echo "グー";
- } else {
- 	echo "それいがい";
- }
+	if ($_GET["player"] == "グー") {
+		echo json_encode($janken_array);
+	} else {
+		$janken_array = [
+			'cpu'=>'other',
+			'result'=>'any'
+		];
+		echo json_encode($janken_array);
+	}
 
 /*
 

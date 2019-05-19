@@ -44,14 +44,17 @@
      *
      */
     function getId(val){
-   // var test = "./janken.php?player=" + val
-	   // alert(test);
+   		// var test = "./janken.php?player=" + val
+	   	// alert(test);
 		$.ajax({
 			url: "./janken.php?player=" + val,
 			type: "GET"
 		})
 		.done((data) => {
-			alert(data);
+			var mydata = JSON.parse(data);
+			console.log(mydata);
+			alert(mydata.cpu);
+			alert(mydata.result);
 		})
 		.fail((failData) => {
 			alert(failData);
