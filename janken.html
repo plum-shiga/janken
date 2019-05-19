@@ -15,8 +15,8 @@
 	<p>
 	<input id="pa" type="button" value="パー" onClick="getId(2)">
 	</p>
-	<p>ここに相手の手を表示する</p>
-	<p>ここに勝敗結果を表示する</p>
+	<p id="comhand">ここに相手の手を表示する</p>
+	<p id="result">ここに勝敗結果を表示する</p>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
 		// 主語を述語するとがんばる
@@ -55,26 +55,29 @@
 			console.log(mydata);
 			alert(mydata.cpu);
 			alert(mydata.result);
+
+			if (mydata.cpu == 'goo') {
+				$('#comhand').text('相手は……グー！');
+			} 
+			if (mydata.cpu == 'choki') {
+				$('#comhand').text('相手は……チョキ！');
+			} 
+			if (mydata.cpu == 'pa') {
+				$('#comhand').text('相手は……パー！');
+			} 
+			
+			/*
+			if (mydata.result == 'win!') {
+				$('#plum').text('LINE');
+			} else {
+				$('#plum').text('Laplace...うぅ...つら...');
+			}
+			*/
 		})
 		.fail((failData) => {
 			alert(failData);
 		});
 	}
-	//*/
-
-		// jquery ajax
-		/*
-		$.ajax({
-			type: "GET",
-			url: "./here.php?janken"
-		})
-		.done((data) => {
-			alert(data);
-		})
-		.fail((failData)=> {
-			alert(failData);
-		});
-		*/
 		
 	</script>
 </body>
