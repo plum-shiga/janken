@@ -32,6 +32,7 @@
 	if ($player == 1 && $comp == 0) {
 		$janken_array['result'] = 'lose...';
 	}
+	
 	//パーのとき
 	if ($player == 2 && $comp == 0) {
 		$janken_array['result'] = 'win!';

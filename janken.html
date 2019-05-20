@@ -15,8 +15,8 @@
 	<p>
 	<input id="pa" type="button" value="パー" onClick="getId(2)">
 	</p>
-	<p id="comhand">ここに相手の手を表示する</p>
-	<p id="result">ここに勝敗結果を表示する</p>
+	<p id="cpu">相手は……</p>
+	<p id="result">あなたの……</p>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
 		// 主語を述語するとがんばる
@@ -57,22 +57,26 @@
 			alert(mydata.result);
 
 			if (mydata.cpu == 'goo') {
-				$('#comhand').text('相手は……グー！');
+				$('#cpu').text('相手は……グー！');
 			} 
 			if (mydata.cpu == 'choki') {
-				$('#comhand').text('相手は……チョキ！');
+				$('#cpu').text('相手は……チョキ！');
 			} 
 			if (mydata.cpu == 'pa') {
-				$('#comhand').text('相手は……パー！');
+				$('#cpu').text('相手は……パー！');
 			} 
 			
-			/*
+			
 			if (mydata.result == 'win!') {
-				$('#plum').text('LINE');
-			} else {
-				$('#plum').text('Laplace...うぅ...つら...');
-			}
-			*/
+				$('#result').text('あなたの勝ち！');
+			} 
+			if (mydata.result == 'draw') {
+				$('#result').text('……あいこ');
+			} 
+			if (mydata.cpu == 'lose...') {
+				$('#result').text('あなたの負け……');
+			} 
+			
 		})
 		.fail((failData) => {
 			alert(failData);
