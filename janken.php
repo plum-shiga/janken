@@ -1,5 +1,9 @@
 <?php
 
+  function judgePatternGoo ($janken_array, $comp) {
+    return 'win!';
+  }
+
 	$hand = ['goo', 'choki', 'pa'];
 	$player = $_GET['player'];
 
@@ -12,16 +16,10 @@
 	];
 
 	//グーのとき
-	if ($player == 0 && $comp == 1) {
-		$janken_array['result'] = 'win!';
-	}
-	if ($player == 0 && $comp == 0) {
-		$janken_array['result'] = 'draw';
-	}
-	if ($player == 0 && $comp == 2) {
-		$janken_array['result'] = 'lose...';
-	}
-	
+	if ($player == 0) {
+		$janken_result = judgePatternGoo();
+		$janken_array['result'] = $janken_result;
+  }
 	//チョキのとき
 	if ($player == 1 && $comp == 2) {
 		$janken_array['result'] = 'win!';
